@@ -1,0 +1,86 @@
+{
+  "name": "Booking",
+  "type": "object",
+  "properties": {
+    "booking_type": {
+      "type": "string",
+      "enum": [
+        "laborer",
+        "equipment"
+      ],
+      "description": "Type of booking"
+    },
+    "farmer_id": {
+      "type": "string",
+      "description": "Reference to User (farmer)"
+    },
+    "laborer_profile_id": {
+      "type": "string",
+      "description": "Reference to LaborerProfile if laborer booking"
+    },
+    "equipment_id": {
+      "type": "string",
+      "description": "Reference to Equipment if equipment booking"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Booking start date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Booking end date"
+    },
+    "duration_hours": {
+      "type": "number",
+      "description": "Duration in hours"
+    },
+    "total_amount": {
+      "type": "number",
+      "description": "Total booking cost"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "in_progress",
+        "completed",
+        "cancelled"
+      ],
+      "default": "pending",
+      "description": "Booking status"
+    },
+    "work_description": {
+      "type": "string",
+      "description": "Description of work needed"
+    },
+    "location": {
+      "type": "string",
+      "description": "Work location"
+    },
+    "farmer_notes": {
+      "type": "string",
+      "description": "Additional notes from farmer"
+    },
+    "provider_notes": {
+      "type": "string",
+      "description": "Notes from laborer or equipment owner"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Rating given after completion"
+    },
+    "review": {
+      "type": "string",
+      "description": "Review text"
+    }
+  },
+  "required": [
+    "booking_type",
+    "farmer_id",
+    "start_date",
+    "total_amount"
+  ]
+}
