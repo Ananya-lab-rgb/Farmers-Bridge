@@ -1,0 +1,10 @@
+{
+  "common": {
+    "loading": "Loading..."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "community": "Community",
+    "logout": "Logout"
+  }
+}

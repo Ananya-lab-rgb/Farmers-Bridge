@@ -1,0 +1,102 @@
+{
+  "name": "Equipment",
+  "type": "object",
+  "properties": {
+    "owner_id": {
+      "type": "string",
+      "description": "Reference to User entity (equipment owner)"
+    },
+    "equipment_type": {
+      "type": "string",
+      "enum": [
+        "tractor",
+        "harvester",
+        "plough",
+        "seeder",
+        "sprayer",
+        "irrigation_system",
+        "thresher",
+        "cultivator",
+        "rotavator",
+        "trailer",
+        "drone",
+        "other"
+      ],
+      "description": "Type of equipment"
+    },
+    "name": {
+      "type": "string",
+      "description": "Equipment name/model"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description"
+    },
+    "brand": {
+      "type": "string",
+      "description": "Equipment brand"
+    },
+    "year": {
+      "type": "number",
+      "description": "Year of manufacture"
+    },
+    "daily_rate": {
+      "type": "number",
+      "description": "Daily rental rate"
+    },
+    "hourly_rate": {
+      "type": "number",
+      "description": "Hourly rental rate"
+    },
+    "availability_status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "rented",
+        "maintenance",
+        "unavailable"
+      ],
+      "default": "available",
+      "description": "Current availability"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Equipment images"
+    },
+    "location": {
+      "type": "string",
+      "description": "Equipment location"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Location latitude"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Location longitude"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Average rating out of 5"
+    },
+    "total_bookings": {
+      "type": "number",
+      "default": 0,
+      "description": "Total completed bookings"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether listing is active"
+    }
+  },
+  "required": [
+    "owner_id",
+    "equipment_type",
+    "name",
+    "daily_rate"
+  ]
+}
